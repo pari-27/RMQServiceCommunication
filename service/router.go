@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"joshsoftware/golang-boilerplate/config"
+	"RMQServiceCommunication/config"
 
 	"github.com/gorilla/mux"
 )

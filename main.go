@@ -6,10 +6,11 @@ package main
 import (
 	"fmt"
 	"os"
-	"pari-27/RMQServiceCommunication/config"
-	"pari-27/RMQServiceCommunication/db"
-	"pari-27/RMQServiceCommunication/service"
 	"strconv"
+
+	"RMQServiceCommunication/config"
+	"RMQServiceCommunication/db"
+	"RMQServiceCommunication/service"
 
 	logger "github.com/sirupsen/logrus"
 	"github.com/urfave/cli"

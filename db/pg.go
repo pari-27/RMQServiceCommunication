@@ -4,7 +4,8 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"joshsoftware/golang-boilerplate/config"
+
+	"RMQServiceCommunication/config"
 	"os"
 	"strconv"
 	"time"

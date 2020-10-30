@@ -1,6 +1,6 @@
 package service
 
-import "joshsoftware/golang-boilerplate/db"
+import "RMQServiceCommunication/db"
 
 type Dependencies struct {
 	Store db.Storer
