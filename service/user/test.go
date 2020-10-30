@@ -15,7 +15,7 @@ import (
 // @Accept  json
 // @Success 200 {object}
 // @Failure 400 {object}
-func listUsersHandler2(deps service.Dependencies) http.HandlerFunc {
+func ListUsersHandler2(deps service.Dependencies) http.HandlerFunc {
 	return http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		users, err := deps.Store.ListUsers(req.Context())
 		if err != nil {
