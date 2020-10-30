@@ -5,10 +5,10 @@ package main
 
 import (
 	"fmt"
-	"joshsoftware/golang-boilerplate/config"
-	"joshsoftware/golang-boilerplate/db"
-	"joshsoftware/golang-boilerplate/service"
 	"os"
+	"pari-27/RMQServiceCommunication/config"
+	"pari-27/RMQServiceCommunication/db"
+	"pari-27/RMQServiceCommunication/service"
 	"strconv"
 
 	logger "github.com/sirupsen/logrus"
