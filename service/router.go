@@ -23,6 +23,8 @@ func InitRouter(deps Dependencies) (router *mux.Router) {
 	// Version 1 API management
 	v1 := fmt.Sprintf("application/vnd.%s.v1", config.AppName())
 
-	router.HandleFunc("/users", user.listUsersHandler2(deps)).Methods(http.MethodGet).Headers(versionHeader, v1)
+	go ComputeListOfData(deps)
+
+	router.HandleFunc("/users", listUsersHandler(deps)).Methods(http.MethodGet).Headers(versionHeader, v1)
 	return
 }

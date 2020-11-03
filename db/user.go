@@ -2,6 +2,7 @@ package db
 
 import (
 	"context"
+	"fmt"
 
 	logger "github.com/sirupsen/logrus"
 )
@@ -18,5 +19,16 @@ func (s *pgStore) ListUsers(ctx context.Context) (users []User, err error) {
 		return
 	}
 
+	return
+}
+
+func (s *pgStore) StoreComputedUsers(msg string) (err error) {
+	query := "insert into computeUsers (ComputedValue) values ($1)"
+	output, err := s.db.Exec(query, msg)
+	fmt.Printf("inserted %v", output)
+	if err != nil {
+		logger.WithField("err", err.Error()).Error("Error listing users")
+		return
+	}
 	return
 }

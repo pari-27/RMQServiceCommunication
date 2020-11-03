@@ -3,6 +3,7 @@ module RMQServiceCommunication
 go 1.15
 
 require (
+	github.com/apache/rocketmq-client-go/v2 v2.1.0-rc3
 	github.com/gorilla/mux v1.8.0
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/lib/pq v1.8.0

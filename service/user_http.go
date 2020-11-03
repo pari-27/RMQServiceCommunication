@@ -3,6 +3,9 @@ package service
 import (
 	"encoding/json"
 	"net/http"
+	"time"
+
+	rmq "RMQServiceCommunication/RMQWrapper"
 
 	logger "github.com/sirupsen/logrus"
 )
@@ -28,7 +31,9 @@ func listUsersHandler(deps Dependencies) http.HandlerFunc {
 			rw.WriteHeader(http.StatusInternalServerError)
 			return
 		}
-
+		p, _ := rmq.CreateProducerInstance()
+		go rmq.SendMsg(string(respBytes), p)
+		time.Sleep(time.Second * 30)
 		rw.Header().Add("Content-Type", "application/json")
 		rw.Write(respBytes)
 	})
